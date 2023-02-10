@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .picture {
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="currentPicture" class="picture" src="picture1.jpg" alt="Picture 1">
+    <button id="changePicture" style="display: none;"></button>
+    <script>
+      const pictures = [
+        "picture1.jpg",
+        " picture2.jpg",
+        " picture3.jpg",
+        " picture4.jpg"
+      ];
+      let currentPicture = 0;
+      document.getElementById("changePicture").addEventListener("click", function() {
+        currentPicture = (currentPicture + 1) % pictures.length;
+        document.getElementById("currentPicture").src = pictures[currentPicture];
+      });
+    </script>
+  </body>
+</html>
